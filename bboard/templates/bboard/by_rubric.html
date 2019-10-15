@@ -1,41 +1,13 @@
-<<<<<<< HEAD
 {% extends "layot/basic.html" %}
 {% block title %}{{ current_rubric.name }}{% endblock %}
 
-{% clock content %}
+{% block content %}
 <h2>Rubric: {{ current_rubric.name }} </h2>
 {% for bb in bbs %}
 <div>
     <h2>{{ bb.title }}</h2>
     <p>{{ bb.content }}</p>
-    <p>{{ bb.published|date:"d.m.Y H:i:s"}}</p>
+    <p>{{ bb.published|date:"d.m.Y H:i:s" }}</p>
 </div>
 {% endfor %}
 {% endblock %}
-=======
-<!DOCTYPE html>   
-<html>  
-    <head>
-        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
-        <title>{{ current_rubric.name }} - Bulletin Board</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <h1>Rubric</h1>
-        <h2>Rubric: {{ current_rubric.name }} - Bulletin Board</h2>
-        <div>
-            <a href="/bboard/">Main</a>
-            {% for rubric in rubrics %}
-            <a href="/bboard/{{ rubric.pk }}/">{{ rubric.name }}</a>
-            {% endfor %}
-        </div>
-        {% for bb in bbs %}
-        <div>
-            <h2>{{ bb.content }}</h2>
-            <p>{{ bb.content }}</p>
-            <p>{{ bb.published|date:"d.m.Y H:i:s"}}</p>
-        </div>
-        {% endfor %}
-    </body>
-</html>
->>>>>>> Initial commit
